@@ -3,12 +3,18 @@ $bgColor: lightblue;
 $baseFont: sans-serif;
 $lMargin: 50px;
 $pad: 10px;
+$style: 2px solid #064277;
+$radius: 20px;
+
+@mixin border($style, $radius){
+    border: $style;
+    border-radius: $radius;
+}
 
 /* Quiz styles */
 
 header {
-    border: 2px solid #064277;
-    border-radius: 20px;
+    @include border($style, $radius);
     margin: 10px auto;
     padding: $pad;
     background-color: $bgColor;
@@ -32,16 +38,14 @@ h1 {
 }
 
 #content {
-    border: 2px solid #064277;
-    border-radius: 20px;
+    @include border($style, $radius);
     margin: 10px auto;
     padding: $pad;
     background-color: $bgColor;
 }
 
 #list{
-    border: 2px solid #064277;
-    border-radius: 20px;
+    @include border($style, $radius);
     background-color: $bgColor;
 }
 
@@ -66,15 +70,13 @@ p{
 }
 
 .samplepara {
-    border: 3px solid #58a0e0;
-    border-radius: 5px;
+    @include border(3px solid #58a0e0, 5px);
     padding: $pad;
     background-color: white;
 }
 
 footer {
-    border: 2px solid #064277;
-    border-radius: 20px;
+    @include border($style, $radius);
     margin: 10px auto;
     padding: $pad;
     background-color: $bgColor;
